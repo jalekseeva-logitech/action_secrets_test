@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
                 .setAnchorView(R.id.fab)
                 .setAction("Action", null).show()
         }
-        Log.d("MainActivity", BuildConfig.APPCIRCLE_API_URL)
+        Log.d("MainActivity", BuildConfig.API_URL)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
