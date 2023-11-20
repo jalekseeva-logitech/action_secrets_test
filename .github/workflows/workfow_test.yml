@@ -1,12 +1,10 @@
 name: learn-github-actions
 run-name: ${{ github.actor }} is learning GitHub Actions
 on: [workflow_dispatch]
-env:
-  API_URL: 'API_URL'
 
 jobs:
   check_var:
     runs-on: ubuntu-latest
     steps:
-      - name: Print Variable
-        run: echo "Hello $API_URL"
+      - name: Print secret Variable
+        run: echo ${{secrets.API_KEY}}

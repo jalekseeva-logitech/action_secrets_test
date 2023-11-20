@@ -16,7 +16,7 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
-        buildConfigField "String", "API_URL", "\"${System.env.AC_API_URL}\""
+        buildConfigField "String", "API_URL", "\"${System.env.API_URL}\""
     }
 
     buildTypes {
