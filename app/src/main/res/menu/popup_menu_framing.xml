@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/framing_dynamic"
+        android:title="@string/dynamic" />
+    <item
+        android:id="@+id/framing_on_call_start"
+        android:title="@string/on_call_start" />
+</menu>
