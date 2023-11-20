@@ -5,10 +5,8 @@ env:
   API_URL: 'API_URL'
 
 jobs:
-  check-bats-version:
+  check_var:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - steps:
-        - name: Print Variable
-          run: echo "Hello $API_URL"
+      - name: Print Variable
+        run: echo "Hello $API_URL"
