@@ -14,7 +14,7 @@ jobs:
           java-version: 1.8
       - name: Access API_URL
         env:
-          API_URL: ${{ secrets.API_URL }}
+          API_URL: ${{ secrets.API_KEY }}
         run: echo API_URL=\"API_URL\" > ./local.properties
       - name: Build the app
         run: ./gradlew assembleDebug
