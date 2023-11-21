@@ -3,6 +3,13 @@ plugins {
     id 'org.jetbrains.kotlin.android'
 }
 
+String getApiKey() {
+    def propFile = rootProject.file("./local.properties")
+    def properties = new Properties()
+    properties.load(new FileInputStream(propFile))
+    return properties['API_URL']
+}
+
 android {
     namespace 'com.example.myapplication'
     compileSdk 33
@@ -16,7 +23,7 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
-        buildConfigField "String", "API_URL", "\"${System.env.API_URL}\""
+        buildConfigField "String", "API_URL", getApiKey()
     }
 
     buildTypes {
