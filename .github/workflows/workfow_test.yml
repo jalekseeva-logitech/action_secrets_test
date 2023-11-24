@@ -1,6 +1,8 @@
 name: learn-github-actions
 run-name: ${{ github.actor }} is learning GitHub Actions
-on: [workflow_dispatch]
+on:
+  pull_request:
+    types: [opened, ready_for_review, reopened]
 
 jobs:
   build:
@@ -13,9 +15,10 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
-      - name: Access API_URL
-        env:
-          API_URL: ${{ secrets.API_KEY }}
-        run: echo API_URL=\"API_URL\" > ./local.properties
-      - name: Build the app
-        run: ./gradlew assembleDebug
+    Review-lottery:
+        runs-on: ubuntu-latest
+        steps:
+          - uses: actions/checkout@v1
+          - uses: uesteibar/reviewer-lottery@v2
+            with:
+                repo-token: '${{ secrets.GITHUB_TOKEN }}'
