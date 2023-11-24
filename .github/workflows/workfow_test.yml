@@ -2,10 +2,11 @@ name: learn-github-actions
 run-name: ${{ github.actor }} is learning GitHub Actions
 on:
   pull_request:
-    types: [opened, ready_for_review, reopened]
+    types: [opened]
 
 jobs:
   build:
+    if: github.event.pull_request.draft == 'false'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the code
